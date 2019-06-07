@@ -11,6 +11,10 @@
       <!-- AR.js ライブラリの読み込み -->
       <script src="js/aframe-ar.js"></script>
 
+      <!--画面遷移ライブラリ-->
+      <script src="https://rawgit.com/nicolocarpignoli/nicolocarpignoli.github.io/master/ar-click-events/events.js"></script>
+
+
     </head>
     <body>
 
@@ -27,16 +31,21 @@
           <a-text value="Happy New Year!\nIntelligent Technology" position=" 0 0 1" align="center" rotation="-90 0 0" color="#DD4827">
           </a-text>
 
-          <a-entity gltf-model="#dog" play-all-model-animations="" position="0 0 0" rotation="0 0 0" scale="0.0025 0.001 0.001" visible="true">
+          <a-entity gltf-model="#dog" play-all-model-animations="" position="0 0 0" rotation="0 0 0" scale="0.0025 0.001 0.001" link="href: https://qiita.com/nonkapibara; image: #dog" visible="true">
               <a-animation attribute="rotation" repeat="indefinite" direction="alternate" dur="500" from="0 0 0" to="10 0 0"></a-animation>
           </a-entity>
         </a-marker>
 
-        <div style="position: fixed; bottom: 150px;">
-           <button type="button" id="b1">フランスパン</button>
-           <button type="button" id="b2">フライパン</button>
-           <button type="button" id="b3">たこ焼き</button>
-         </div>
+
+        <a-light type="ambient" color="#ffffff"></a-light>
+ <a-light type="point" intensity="2" position="0 0 0"></a-light>
+<a-entity camera>
+  <!-- cursor: trueにすると時間になったら自動でリンク先に飛ぶ-->
+  <a-entity cursor="fuse: false; fuseTimeout: 500">
+</a-entity>
+
+
+
 
         <a-entity camera></a-entity>
 
