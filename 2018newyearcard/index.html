@@ -21,7 +21,7 @@
 
 
       <!-- A-Frame の VR空間に AR.js を紐づける -->
-      <a-scene embedded arjs="debugUIEnabled:false; sourceType: webcam;" vr-mode-ui="enabled: false">
+      <a-scene embedded arjs="debugUIEnabled:false;" renderer="gammaOutput: true;" vr-mode-ui="enabled: false">
         <a-assets>
              <a-asset-item id="dog" src="models/Dog.glb"></a-asset-item>
         </a-assets>
@@ -31,13 +31,23 @@
           <a-text value="Happy New Year!\nIntelligent Technology" position=" 0 0 1" align="center" rotation="-90 0 0" color="#DD4827">
           </a-text>
 
-          <a-entity gltf-model="#dog" play-all-model-animations="" position="0 0 0" rotation="0 0 0" scale="0.0025 0.001 0.001" link="href: https://qiita.com/nonkapibara; image: #dog" visible="true">
+<!--
+          <a-entity gltf-model="#dog" play-all-model-animations="" position="0 0 0" rotation="0 0 0" scale="0.0025 0.001 0.001" link="href: https://qiita.com/nonkapibara; title: nonkapibara; image: #dog" visible="true">
               <a-animation attribute="rotation" repeat="indefinite" direction="alternate" dur="500" from="0 0 0" to="10 0 0"></a-animation>
           </a-entity>
+-->
+
+          <a-box position="0 0.5 0" wireframe="true" link="href: https://qiita.com/nonkapibara; title: nonkapibara; image: #heart"></a-box>
+
         </a-marker>
 
-        <!-- 遷移-->
-        <a-box position="0 0.5 0" wireframe="true" link="href: https://qiita.com/nonkapibara; title: nonkapibara; gltf-model="#dog" "></a-box>
+        <a-light type="ambient" color="#ffffff"></a-light>
+        <a-light type="point" intensity="2" position="0 0 0"></a-light>
+       <a-entity camera>
+         <!-- cursor: trueにすると時間になったら自動でリンク先に飛ぶ-->
+         <a-entity cursor="fuse: false; fuseTimeout: 500">
+       </a-entity>
+
 
 
 
