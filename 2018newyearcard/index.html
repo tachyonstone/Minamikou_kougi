@@ -11,15 +11,14 @@
       <!-- AR.js ライブラリの読み込み -->
       <script src="js/aframe-ar.js"></script>
 
+      <!--画面遷移ライブラリ-->
+      <script src="https://rawgit.com/nicolocarpignoli/nicolocarpignoli.github.io/master/ar-click-events/events.js"></script>
+
+
     </head>
     <body>
 
-      <script language="javascript" type="text/javascript">
-          function OnButtonClick() {
-              target = document.getElementById("output");
-              target.innerHTML = "Penguin";
-          }
-      </script>
+
 
       <!-- A-Frame の VR空間に AR.js を紐づける -->
       <a-scene embedded arjs="debugUIEnabled:false; sourceType: webcam;" vr-mode-ui="enabled: false">
@@ -32,10 +31,16 @@
           <a-text value="Happy New Year!\nIntelligent Technology" position=" 0 0 1" align="center" rotation="-90 0 0" color="#DD4827">
           </a-text>
 
-          <a-entity gltf-model="#dog" play-all-model-animations="" position="0 0 0" rotation="0 0 0" scale="0.0025 0.001 0.001" visible="true">
+          <a-entity gltf-model="#dog" play-all-model-animations="" position="0 0 0" rotation="0 0 0" scale="0.0025 0.001 0.001" link="href: https://qiita.com/nonkapibara; image: #dog" visible="true">
               <a-animation attribute="rotation" repeat="indefinite" direction="alternate" dur="500" from="0 0 0" to="10 0 0"></a-animation>
           </a-entity>
         </a-marker>
+
+        <!-- 遷移-->
+        <a-box position="0 0.5 0" wireframe="true" link="href: https://qiita.com/nonkapibara; title: nonkapibara; gltf-model="#dog" "></a-box>
+
+
+
 
         <a-entity camera></a-entity>
 
