@@ -28,13 +28,47 @@
 
         <!-- マーカーを登録（デフォルトで設定されている「hiro」マーカー） -->
         <a-marker preset='custom' type='pattern' url="marker/2018-iti-marker.patt">
-          <a-text value="Happy New Year!\nIntelligent Technology" position=" 0 0 1" align="center" rotation="-90 0 0" color="#DD4827">
-          </a-text>
 
+
+
+          <!--position-->
+                <script type="text/javascript">
+                    if (navigator.geolocation) {
+                        // 現在の位置情報取得を実施
+                        navigator.geolocation.getCurrentPosition(
+                        // 位置情報取得成功時
+                        function (pos) {
+                                var location ="<li>"+"緯度：" + pos.coords.latitude + "</li>";
+                                location += "<li>"+"経度：" + pos.coords.longitude + "</li>";
+                                document.getElementById("location").innerHTML = location;
+                                document.write("<a-text value= " location " \"position=\" 0 0 1\" align=\"center\" rotation=\"-90 0 0\" color=\"#DD4827\">" "</a-text>");
+
+
+                        },
+                        // 位置情報取得失敗時
+                        function (pos) {
+                                var location ="<li>位置情報が取得できませんでした。</li>";
+                                document.getElementById("location").innerHTML = location;
+                        });
+                    } else {
+                        window.alert("本ブラウザではGeolocationが使えません");
+                    }
+                </script>
+                    <ul id="location">
+                    </ul>
+
+                  <!--position-->
+
+
+<!--
+                  <a-text value="Happy New Year!\nIntelligent Technology" position=" 0 0 1" align="center" rotation="-90 0 0" color="#DD4827">
+                  </a-text>
+-->
 
           <a-entity gltf-model="#dog" play-all-model-animations="" position="0 0 0" rotation="0 0 0" scale="0.0025 0.001 0.001" visible="true">
               <a-animation attribute="rotation" repeat="indefinite" direction="alternate" dur="500" from="0 0 0" to="10 0 0"></a-animation>
           </a-entity>
+
 
 
         </a-marker>
@@ -55,30 +89,7 @@
       </a-scene>
       <input type="button" style="position: absolute; left: 50px; top: 10px;" onclick="location.href='https://www.pref.miyazaki.lg.jp/'" value="ボタン">
 
-<!--position-->
-      <script type="text/javascript">
-          if (navigator.geolocation) {
-              // 現在の位置情報取得を実施
-              navigator.geolocation.getCurrentPosition(
-              // 位置情報取得成功時
-              function (pos) {
-                      var location ="<li>"+"緯度：" + pos.coords.latitude + "</li>";
-                      location += "<li>"+"経度：" + pos.coords.longitude + "</li>";
-                      document.getElementById("location").innerHTML = location;
-              },
-              // 位置情報取得失敗時
-              function (pos) {
-                      var location ="<li>位置情報が取得できませんでした。</li>";
-                      document.getElementById("location").innerHTML = location;
-              });
-          } else {
-              window.alert("本ブラウザではGeolocationが使えません");
-          }
-      </script>
-          <ul id="location">
-          </ul>
 
-        <!--position-->
 
     </body>
   </html>
