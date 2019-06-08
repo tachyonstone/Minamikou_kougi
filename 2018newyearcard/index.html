@@ -74,7 +74,7 @@
                     function (pos) {
                             var location ="<li>"+"緯度：" + pos.coords.latitude + "</li>";
                             location += "<li>"+"経度：" + pos.coords.longitude + "</li>";
-                            document.getElementById("location").innerHTML = location;
+                            document.getElementById("loc").innerHTML = location;
 
                             //document.write("<a-text value= " + location + "\"position=\" 0 0 1\" align=\"center\" rotation=\"-90 0 0\" color=\"#DD4827\">" + "</a-text>");
 
@@ -83,14 +83,14 @@
                     // 位置情報取得失敗時
                     function (pos) {
                             var location ="<li>位置情報が取得できませんでした。</li>";
-                            document.getElementById("location").innerHTML = location;
+                            document.getElementById("loc").innerHTML = location;
                     });
                 } else {
                     window.alert("本ブラウザではGeolocationが使えません");
                 }
             </script>
 
-            <span id="location" style="position: absolute; left: 150px; top: 10px;">pos</p>
+            <span id="loc" style="position: absolute; left: 150px; top: 10px;">pos</p>
 
 
 
