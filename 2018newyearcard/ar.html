@@ -14,51 +14,49 @@
       <!--画面遷移ライブラリ-->
       <script src="https://rawgit.com/nicolocarpignoli/nicolocarpignoli.github.io/master/ar-click-events/events.js"></script>
 
-
     </head>
     <body>
 
+  <!--position-->
+          <script type="text/javascript">
+              if (navigator.geolocation) {
+                  // 現在の位置情報取得を実施
+                  navigator.geolocation.getCurrentPosition(
+                  // 位置情報取得成功時
+                  function (pos) {
+                          var location ="<li>"+"緯度：" + pos.coords.latitude + "</li>";
+                          location += "<li>"+"経度：" + pos.coords.longitude + "</li>";
 
-        <!--position-->
-              <script type="text/javascript">
-                  if (navigator.geolocation) {
-                      // 現在の位置情報取得を実施
-                      navigator.geolocation.getCurrentPosition(
-                      // 位置情報取得成功時
-                      function (pos) {
-                              var location ="<li>"+"緯度：" + pos.coords.latitude + "</li>";
-                              location += "<li>"+"経度：" + pos.coords.longitude + "</li>";
+                        //  document.getElementById("loc").innerHTML = location;
 
-                            //  document.getElementById("loc").innerHTML = location;
+                        //  document.getElementById("loc").value = location;
+                        document.getElementById("loc").value = "SUCCESSED";
 
-                            //  document.getElementById("loc").value = location;
-                            document.getElementById("loc").value = "SUCCESSED";
-
-                              //document.write("<a-text value= " + location + "\"position=\" 0 0 1\" align=\"center\" rotation=\"-90 0 0\" color=\"#DD4827\">" + "</a-text>");
+                          //document.write("<a-text value= " + location + "\"position=\" 0 0 1\" align=\"center\" rotation=\"-90 0 0\" color=\"#DD4827\">" + "</a-text>");
 
 
-                      },
-                      // 位置情報取得失敗時
-                      function (pos) {
-                              var location ="<li>位置情報が取得できませんでした。</li>";
-                              document.getElementById("loc").innerHTML = location;
-                      });
-                  } else {
-                      window.alert("本ブラウザではGeolocationが使えません");
-                  }
-              </script>
+                  },
+                  // 位置情報取得失敗時
+                  function (pos) {
+                          var location ="<li>位置情報が取得できませんでした。</li>";
+                          document.getElementById("loc").innerHTML = location;
+                  });
+              } else {
+                  window.alert("本ブラウザではGeolocationが使えません");
+              }
+          </script>
 
-  <!--
-    <span id="loc" style="position: absolute; left: 150px; top: 10px;">NOW LOADING</p>
-  -->
-                <!--position-->
+<!--
+<span id="loc" style="position: absolute; left: 150px; top: 10px;">NOW LOADING</p>
+-->
+<!--position-->
 
 
 
       <!-- A-Frame の VR空間に AR.js を紐づける -->
       <a-scene embedded arjs="debugUIEnabled:false;" renderer="gammaOutput: true;" vr-mode-ui="enabled: false">
         <a-assets>
-             <a-asset-item id="dog" src="models/Dog.glb"></a-asset-item>
+             <a-asset-item id="dog" src="models/test.glb"></a-asset-item>
         </a-assets>
 
 
