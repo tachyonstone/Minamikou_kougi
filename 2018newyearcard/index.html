@@ -9,5 +9,26 @@
 
       <p>Hello World!</p>
 
+      <input type="button" value="あいさつ" onclick="sayhello();">
+      <input type="button" value="太郎" onclick="taro();">
+      <input type="button" value="花子" onclick="hanako();">
+      <p>誰？<input type="text" id="who"></p>
+
+
+      <script type="text/javascript">
+            function sayhello() {
+          alert('Hello, ' + document.getElementById('who').value + '!');
+      }
+
+      function taro() {
+          document.getElementById('who').value = '太郎';
+      }
+
+      function hanako() {
+          document.getElementById('who').value = '花子';
+      }
+
+      </script>
+
     </body>
   </html>
