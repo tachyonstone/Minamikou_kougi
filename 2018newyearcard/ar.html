@@ -5,14 +5,18 @@
       <title>M高校_観光アプリサンプル（AR）</title>
 
       <!-- A-Frame ライブラリの読み込み -->
-      <script src="https://aframe.io/releases/0.7.1/aframe.min.js"></script>
+      <script src="https://aframe.io/releases/0.8.0/aframe.min.js"></script>
       <!-- <script src="https://jeromeetienne.github.io/AR.js/aframe/build/aframe-ar.js"></script>     -->
 
       <!-- AR.js ライブラリの読み込み -->
-      <script src="js/aframe-ar.js"></script>
+      <script src="https://cdn.rawgit.com/jeromeetienne/AR.js/1.5.0/aframe/build/aframe-ar.js"></script>
 
       <!--画面遷移ライブラリ-->
       <script src="https://rawgit.com/nicolocarpignoli/nicolocarpignoli.github.io/master/ar-click-events/events.js"></script>
+
+      <!--motion-->
+      <script src="https://cdn.rawgit.com/donmccurdy/aframe-extras/v4.2.0/dist/aframe-extras.min.js"></script>
+
 
     </head>
     <body>
@@ -82,7 +86,7 @@
             <!-- オブジェクトの追加 -->
             <a-entity gltf-model="src: url(./models/text.gltf);"
                       animation-mixer="loop: pingpong;"
-                      position="-0.5 0.1 0"
+                      position="0 0 0"
                       scale="0.25 0.25 0.25"
                       shadow="receive: true"></a-entity>
 
