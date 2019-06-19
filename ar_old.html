@@ -1,0 +1,124 @@
+<html>
+    <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+      <title>M高校_観光アプリサンプル（AR）</title>
+
+      <!-- A-Frame ライブラリの読み込み -->
+      <script src="https://aframe.io/releases/0.8.0/aframe.min.js"></script>
+      <!-- <script src="https://jeromeetienne.github.io/AR.js/aframe/build/aframe-ar.js"></script>     -->
+
+      <!-- AR.js ライブラリの読み込み -->
+      <script src="https://cdn.rawgit.com/jeromeetienne/AR.js/1.5.0/aframe/build/aframe-ar.js"></script>
+
+      <!--画面遷移ライブラリ-->
+      <script src="https://rawgit.com/nicolocarpignoli/nicolocarpignoli.github.io/master/ar-click-events/events.js"></script>
+
+<!--motion-->
+      <script src="https://cdn.rawgit.com/donmccurdy/aframe-extras/v4.2.0/dist/aframe-extras.min.js"></script>
+
+
+    </head>
+    <body>
+
+  <!--position-->
+          <script type="text/javascript">
+              if (navigator.geolocation) {
+                  // 現在の位置情報取得を実施
+                  navigator.geolocation.getCurrentPosition(
+                  // 位置情報取得成功時
+                  function (pos) {
+                          var location ="<li>"+"緯度：" + pos.coords.latitude + "</li>";
+                          location += "<li>"+"経度：" + pos.coords.longitude + "</li>";
+
+                        //  document.getElementById("loc").innerHTML = location;
+
+                        //  document.getElementById("loc").value = location;
+                        document.getElementById("loc").value = "SUCCESSED";
+                        document.getElementById("loc").innerHTML = location;
+                          //document.write("<a-text value= " + location + "\"position=\" 0 0 1\" align=\"center\" rotation=\"-90 0 0\" color=\"#DD4827\">" + "</a-text>");
+
+
+                  },
+                  // 位置情報取得失敗時
+                  function (pos) {
+                          var location ="<li>位置情報が取得できませんでした。</li>";
+                          document.getElementById("loc").innerHTML = location;
+                  });
+              } else {
+                  window.alert("本ブラウザではGeolocationが使えません");
+              }
+          </script>
+
+<!--
+<span id="loc" style="position: absolute; left: 150px; top: 10px;">NOW LOADING</p>
+-->
+<!--position-->
+
+
+
+      <!-- A-Frame の VR空間に AR.js を紐づける -->
+      <a-scene embedded arjs="debugUIEnabled:false;" renderer="gammaOutput: true;" vr-mode-ui="enabled: false">
+
+        <a-assets>
+             <a-asset-item id="dog" src="models/Dog.glb"></a-asset-item>
+        </a-assets>
+
+
+        <!-- マーカーを登録（マーカー） -->
+        <a-marker preset='custom' type='pattern' url="marker/2018-iti-marker.patt">
+
+
+<!--
+                  <a-text value="Happy New Year!\nIntelligent Technology" position=" 0 0 1" align="center" rotation="-90 0 0" color="#DD4827">
+                  </a-text>
+
+-->
+
+                <a-entity gltf-model="#dog" play-all-model-animations="" position="0 0 0" rotation="0 0 0" scale="0.0025 0.001 0.001" visible="true">
+                    <a-animation attribute="rotation" repeat="indefinite" direction="alternate" dur="500" from="0 0 0" to="10 0 0"></a-animation>
+                </a-entity>
+
+
+
+            <!-- オブジェクトの追加 -->
+            
+            <a-entity gltf-model="src: url(./models/text.gltf);"
+                      animation-mixer="loop: pingpong;"
+                      position="0 0 0"
+                      scale="0.25 0.25 0.25"
+                      shadow="receive: true"></a-entity>
+
+            <a-plane position="0 0 0"
+                     rotation="-90 0 0"
+                     width="2" height="2"
+                     color="#fff"
+                     shadow="receive: true"></a-plane>
+
+            <a-entity light="type: directional; color: #fff; castShadow:true;"
+                      position="-10 10 10"></a-entity>
+
+
+          <a-text id="loc" value="now loading2" position=" 0 0 1" align="center" rotation="-90 0 0" color="#DD4827">
+          </a-text>
+
+        </a-marker>
+
+
+        <a-light type="ambient" color="#ffffff"></a-light>
+        <a-light type="point" intensity="2" position="0 0 0"></a-light>
+       <a-entity camera>
+         <!-- cursor: trueにすると時間になったら自動でリンク先に飛ぶ-->
+         <a-entity cursor="fuse: false; fuseTimeout: 500">
+       </a-entity>
+
+
+        <a-entity camera></a-entity>
+
+      </a-scene>
+
+      <input type="button" style="position: absolute; left: 50px; top: 10px;" onclick="location.href='https://www.pref.miyazaki.lg.jp/'" value="ボタン">
+
+
+    </body>
+  </html>
