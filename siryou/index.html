@@ -1,23 +1,44 @@
 <!DOCTYPE html>
-<html>
+<html lang="ja">
   <head>
     <meta charset="utf-8">
-    <link rel="stylesheet" href="./css/index.css">
+    <link rel="stylesheet" href="css/style.css">
     <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
-    <title>TEST</title>
+    <title>宮崎南高等学校 アプリ開発</title>
   </head>
 
   <body>
-    <h1>test</h1>
+    <h1>宮崎南高等学校 アプリ開発補助資料</h1>
 
-    <p>This is a test script. </p>
+    <h2 class="icon">CSS</h2>
+      <p>レイアウトや装飾など見た目を整えるための言語．</p>
+
+
+    <h3>CSSの基本的な書き方</h3>
+      <img src="images/css_kiso.png" width="300" height="100">
+      <p>どれの {何を: どうするか}</p>
+
+    <h3>3通りの書き方</h3>
+      <ul>
+        <li>タグの直接style属性に直接記述</li>
+        <li>style要素内に記述</li>
+        <li>外部ファイルに記述</li>
+      </ul>
+
+<p>直接記述．</p>
+    <pre><code class="prettyprint linenums">
+&lt;p style=&quot;color:blue;&quot;&gt;
+    </pre></code>
+
+
+    <p>CSSファイルを外部から読み込む．</p>
 
     <pre><code class="prettyprint linenums">
 &lt;!DOCTYPE html&gt;
-&lt;html&gt;
+&lt;html lang=&quot;ja&quot;&gt;
   &lt;head&gt;
     &lt;meta charset=&quot;utf-8&quot;&gt;
-    &lt;link rel=&quot;stylesheet&quot; href=&quot;./css/index.css&quot;&gt;
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;#&quot;&gt;
     &lt;title&gt;TEST&lt;/title&gt;
   &lt;/head&gt;
 
@@ -32,11 +53,71 @@
 
     </code></pre>
 
-    <img src="./images/miyadaimou.gif"><br>
+    <h2 class="icon">クライアントサイドJavaScriptプログラミング</h2>
 
-    <a href="https://saruwakakun.com/html-css/reference/buttons#section1">CSSボタン</a><br>
+    <p>JavaScriptファイルを外部から読み込む．</p>
 
-    <a href="https://dotinstall.com/">ドットインストール</a>
+    <pre><code class="prettyprint linenums">
+    &lt;body&gt;
+      ・・・・・・
+      &lt;script type=&quot;text/javascript&quot; src=&quot;JSファイルのパス&quot;&gt;&lt;/script&gt;
+    &lt;/body&gt;
+  </code></pre>
+
+    <ul>
+      <li>要素ノードの取得</li>
+
+
+<p>操作の対象となる要素を取得（id値をキーとした場合）．</p>
+    <pre><code class="prettyprint linenums">
+document.getElementById("myid");
+    </code></pre>
+
+
+    <li>イベントドリブンモデル</li>
+
+    <p>イベントハンドラの設定．</p>
+    <pre><code class="prettyprint linenums">
+    &lt;タグ名 onイベント名=&quot;JavaScriptのコード&quot;&gt;
+    </code></pre>
+
+  </ul>
+
+<!--
+<h3>画像を表示する</h3>
+
+    <img src="images/miyadaimou.gif" width="300" height="300"><br>
+
+-->
+
+    <h2 class="icon">課題</h2>
+    <a class="kadai" href="https://dotinstall.com/" target="_blank">ドットインストール</a><br>
+    <ul>
+      <li>はじめてのHTML</li>
+      <li>はじめてのCSS</li>
+      <li>実践！ウェブサイトを作ろう</li>
+      <li>はじめてのJavaScript</li>
+    </ul>
+
+      <a class="kadai" href="https://www.dropbox.com/s/rq5g6l5hlrtfi1f/%E7%A0%94%E7%A9%B6%E8%A8%88%E7%94%BB%E6%9B%B8.docx?dl=0" target="_blank">研究計画書</a><br>
+
+      <a class="kadai" href="https://www.dropbox.com/s/eysu3g85umong4h/%E7%94%BB%E9%9D%A2%E9%81%B7%E7%A7%BB%E5%9B%B3.docx?dl=0" target="_blank">画面遷移図（白紙から手書きで書いても良い）</a>
+
+<h2 class="icon">参考資料</h2>
+
+    <a href="https://saruwakakun.com/html-css/reference/buttons#section1" target="_blank">CSSボタン</a><br>
+    <a href="https://saruwakakun.com/html-css/reference/h-design" target="_blank">CSS見出しのデザイン</a><br>
+    <a href="http://phpjavascriptroom.com/?t=js&p=event" target="_blank">JavaScriiptのイベントハンドラ一覧</a><br>
+    <a href="http://gakkai.univcoop.or.jp/pcc/2013/papers/pdf/pcc070.pdf" target="_blank">論文参考資料</a><br>
+<!--
+    <h2 class="icon">AR</h2>
+    <p>以下のサイトはスマートフォンでの実行を想定．</p>
+-->
+
+<!--空白-->
+    <p>
+     <div style="margin-bottom: 50px"></div>
+    </p>
 
   </body>
 
