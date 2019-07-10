@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <meta name="robots" content="noindex,nofollow,noarchive" />
+    <title>計算</title>
+  </head>
+  <body>
+
+    <p id="id01">我が輩は猫である。</p>
+    <input type="button" value="change" onclick="change();">
+
+
+    <p>数字？<input type="text" id="cal"></p>
+    <input type="button" value="計算する" onclick="calculate();">
+    <p id="cal2">show result</p>
+
+
+
+    <input type="button" value="change" onclick="change();">
+
+
+<!--三角形の面積-->
+  <p>底辺：<input type="text" id="bottom"></p>
+  <p>高さ：<input type="text" id="height"></p>
+
+  <input type="button" value="面積" onclick="calArea()">
+
+  <p id="area">show result</p>
+
+
+  <input type="text" id="imgNum">
+  <input type="button" value="testB" onclick="changeImage()">
+<p id="imgShow">AAA</p>
+
+
+<img class='imgTest' src = 'img/DSC_0319.jpg' weight="100px" height="180px" rotate="90deg">
+
+
+<script type="text/javascript">
+
+  function calculate(){
+    var result;
+    result = document.getElementById('cal').value * 2;
+    document.getElementById('cal2').innerHTML = result;
+
+  }
+
+  function calArea() {
+    var area;
+    var bottom = document.getElementById('bottom').value;
+    var height = document.getElementById('height').value;
+
+    area = bottom * height / 2;
+
+    if (area > 50) {
+      var message = "AAA<br>";
+      for (var i = 0; i < 5; i++) {
+
+        message += "<p style='color: blue;'>AAA<br>";
+      }
+
+      document.getElementById('area').innerHTML = message;
+
+    }else {
+      document.getElementById('area').innerHTML = area;
+
+    }
+
+  }
+
+
+  function changeImage() {
+    //document.getElementById('imgShow').innerHTML =
+    //"<img class='imgTest' src = 'img/DSC_0319.jpg'>";
+  }
+
+</script>
+
+<script type="text/javascript" src="js/keisan.js">
+
+</script>
+
+  </body>
+</html>

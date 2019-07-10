@@ -1,0 +1,78 @@
+header {
+  background-image: url(../img/DSC_0207.jpg);
+  height: 250px;
+  weight: 150px;
+  background-size: cover;
+  background-position: 80% 20%;
+  margin-bottom: 60px;
+}
+
+header h1 {
+  text-align: left;
+  color: white;
+  margin-left: 15px;
+  margin-top: 0;
+}
+
+h1 {
+  text-align: center;
+  color: red;
+}
+
+body {
+  margin: 0;
+  background-color: #FFFFCC;
+
+}
+
+.test1 {
+  background-color: red;
+
+}
+
+.works {
+  width: auto;
+text-align: center;
+}
+
+.btn1 {
+  background-color: #000080;
+  color: white;
+  font-size: 20px;
+  font-family: 'Hiragino Sans', serif;
+  width: 190px;
+  display: inline-block;
+  border-radius: 10px;
+  text-decoration: none;
+  margin-bottom: 5px;
+}
+
+.btn1:hover {
+  /* text-decoration: none; */
+  background-color: white;
+  color: #009cd3;
+}
+
+.btn2 {
+  background-color: red;
+  color: white;
+  font-size: 20px;
+  font-family: 'Hiragino Sans', serif;
+  width: 190px;
+  display: inline-block;
+  border-radius: 10px;
+  text-decoration: none;
+
+}
+
+.btn2:hover {
+  /* text-decoration: none; */
+  background-color: white;
+  color: #009cd3;
+}
+
+.imgTest {
+  width: 100px;
+  height: 300px;
+
+}
