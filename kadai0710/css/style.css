@@ -8,6 +8,7 @@ header {
 }
 
 header h1 {
+  font-size: 50px;
   text-align: left;
   color: white;
   margin-left: 15px;
@@ -15,6 +16,7 @@ header h1 {
 }
 
 h1 {
+  font-size: 40px;
   text-align: center;
   color: red;
 }
@@ -38,13 +40,13 @@ text-align: center;
 .btn1 {
   background-color: #000080;
   color: white;
-  font-size: 20px;
+  font-size: 40px;
   font-family: 'Hiragino Sans', serif;
-  width: 190px;
+  width: 300px;
   display: inline-block;
   border-radius: 10px;
   text-decoration: none;
-  margin-bottom: 5px;
+  margin-bottom: 15px;
 }
 
 .btn1:hover {
@@ -56,9 +58,9 @@ text-align: center;
 .btn2 {
   background-color: red;
   color: white;
-  font-size: 20px;
+  font-size: 40px;
   font-family: 'Hiragino Sans', serif;
-  width: 190px;
+  width: 300px;
   display: inline-block;
   border-radius: 10px;
   text-decoration: none;
