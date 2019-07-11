@@ -13,6 +13,13 @@
     <h2 class="icon">HTML</h2>
      <p>ウェブページを作成するための言語．</p>
 
+     <h3>検索エンジンにインデックス（登録）させたくない場合</h3>
+      <p>以下のコードをhead要素内に挿入</p>
+      <pre><code class="prettyprint linenums">
+&lt;meta name=&quot;robots&quot; content=&quot;noindex,nofollow,noarchive&quot; /&gt;<br>
+      </pre></code>
+
+
     <h2 class="icon">CSS</h2>
       <p>レイアウトや装飾など見た目を整えるための言語．</p>
 
@@ -23,18 +30,27 @@
 
     <h3>3通りの書き方</h3>
       <ul>
-        <li>タグの直接style属性に直接記述</li>
+        <li>タグのstyle属性に直接記述</li>
         <li>style要素内に記述</li>
         <li>外部ファイルに記述</li>
       </ul>
 
-<p>直接記述．</p>
+<b>直接記述．</b>
     <pre><code class="prettyprint linenums">
 &lt;p style=&quot;color:blue;&quot;&gt;
     </pre></code>
 
+<b>style要素内に記述</b>
+<pre><code class="prettyprint linenums">
+&lt;style type=&quot;text/css&quot;&gt;
+p {
+  color: blue;
+}
+&lt;/style&gt;
+&lt;p&gt;hello.&lt;/p&gt;
+</pre></code>
 
-    <p>CSSファイルを外部から読み込む．</p>
+    <b>CSSファイルを外部から読み込む．</b>
 
     <pre><code class="prettyprint linenums">
 &lt;!DOCTYPE html&gt;
@@ -101,8 +117,11 @@ document.getElementById("myid");
          <li>Ctrl＋S　ファイルを保存</li>
          <li>Ctrl＋Z　操作を元に戻す</li>
          <li>Ctrl＋Y　元に戻した操作をやり直す</li>
+         <li>F12     ブラウザの検証ツール</li>
        </ul>
 
+       <h2 class="icon">素材</h2>
+       <a href="https://www.dropbox.com/sh/g67rb8hqpb8pssm/AAAzy7vdWy-LZwJIIqIG5z2ya?dl=0">画像素材</a>
 
     <h2 class="icon">課題</h2>
     <div class="kadai">環境構築</div>
@@ -156,7 +175,7 @@ document.getElementById("myid");
     <p>以下のサイトはスマートフォンでの実行を想定．</p>
 -->
 
-<p>最終更新日：2019年7月5日</p>
+<p>最終更新日：2019年7月11日</p>
 
 <!--空白-->
     <p>
